@@ -1,0 +1,43 @@
+import type { SEGMENTS } from "./segments.ts";
+
+export const DIGIT_SEGMENTS: Record<number, (keyof typeof SEGMENTS)[]> = {
+  1: ["TR_TOP"],
+  2: ["TR_BOT"],
+  3: ["TR_DIAG1"],
+  4: ["TR_DIAG2"],
+  5: ["TR_TOP", "TR_DIAG2"],
+  6: ["TR_VERT"],
+  7: ["TR_VERT", "TR_TOP"],
+  8: ["TR_VERT", "TR_BOT"],
+  9: ["TR_TOP", "TR_BOT", "TR_VERT"],
+
+  10: ["TL_TOP"],
+  20: ["TL_BOT"],
+  30: ["TL_DIAG2"],
+  40: ["TL_DIAG1"],
+  50: ["TL_TOP", "TL_DIAG1"],
+  60: ["TL_VERT"],
+  70: ["TL_VERT", "TL_TOP"],
+  80: ["TL_VERT", "TL_BOT"],
+  90: ["TL_TOP", "TL_BOT", "TL_VERT"],
+
+  100: ["BR_BOT"],
+  200: ["BR_TOP"],
+  300: ["BR_DIAG2"],
+  400: ["BR_DIAG1"],
+  500: ["BR_BOT", "BR_DIAG1"],
+  600: ["BR_VERT"],
+  700: ["BR_VERT", "BR_BOT"],
+  800: ["BR_VERT", "BR_TOP"],
+  900: ["BR_TOP", "BR_BOT", "BR_VERT"],
+
+  1000: ["BL_BOT"],
+  2000: ["BL_TOP"],
+  3000: ["BL_DIAG1"],
+  4000: ["BL_DIAG2"],
+  5000: ["BL_BOT", "BL_DIAG2"],
+  6000: ["BL_VERT"],
+  7000: ["BL_VERT", "BL_BOT"],
+  8000: ["BL_VERT", "BL_TOP"],
+  9000: ["BL_TOP", "BL_BOT", "BL_VERT"],
+};
