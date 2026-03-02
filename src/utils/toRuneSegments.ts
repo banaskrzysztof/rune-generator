@@ -3,13 +3,10 @@ import type { SEGMENTS } from "../constants/segments.ts";
 
 const DIVISORS = [1000, 100, 10, 1] as const;
 
-export const toRuneSegments = (n: number): Set<keyof typeof SEGMENTS> => {
+export const toRuneSegments = (n: number): (keyof typeof SEGMENTS)[] => {
   const parts = DIVISORS.map(
     (divisor) => (Math.floor(n / divisor) % 10) * divisor,
   ).filter((part) => part > 0);
 
-  return new Set([
-    "V_CENTER",
-    ...parts.flatMap((part) => DIGIT_SEGMENTS[part]),
-  ]);
+  return ["V_CENTER", ...parts.flatMap((part) => DIGIT_SEGMENTS[part])];
 };
